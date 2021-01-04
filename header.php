@@ -3,7 +3,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title><?php the_title(); ?></title>
-<link rel="icon" type="image/x-icon" href="<?= get_template_directory_uri(); ?>/assets/img/my_qiita.ico" />
+<link rel="icon" type="image/x-icon" href="<?= get_template_directory_uri(); ?>/assets/img/my_qiita.png" />
 <!-- Font Awesome icons (free version)-->
 <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
 <!-- Google fonts-->
