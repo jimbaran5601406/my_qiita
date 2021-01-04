@@ -95,6 +95,10 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+            <!-- Career-->
+            <?php get_template_part('career'); ?>
+
             <!-- Skills-->
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
