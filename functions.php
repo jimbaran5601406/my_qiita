@@ -16,6 +16,15 @@ add_action('init', function ()
         'supports' => ['title', 'custom-fields'],
         'show_in_rest' => true, // 新エディター有効化
     ]);
+
+    // 資格カスタム投稿タイプ追加
+    register_post_type('certification', [
+        'label' => '資格',
+        'description' => 'Add a certification to Certification section',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-awards',
+        'supports' => ['title', 'custom-fields'],
         'show_in_rest' => true, // 新エディター有効化
     ]);
 });
