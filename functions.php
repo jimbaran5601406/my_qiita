@@ -13,7 +13,9 @@ add_action('init', function ()
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-welcome-learn-more',
-        'supports' => ['title', 'editor', 'custom-fields'],
+        'supports' => ['title', 'custom-fields'],
+        'show_in_rest' => true, // 新エディター有効化
+    ]);
         'show_in_rest' => true, // 新エディター有効化
     ]);
 });
@@ -80,8 +82,17 @@ function get_prev_pagination() {
     $prev_link = get_previous_posts_link('<');
 
     if($prev_link) {
-        $prev_link = str_replace('<a', '<a class="btn btn-primary float-left" href="#blog"', $prev_link);
+        $prev_link = str_replace('<a', '<a class="btn btn-primary float-left" href="', $prev_link);
         return $prev_link;
+    }
+
+    if(is_page()) {
+        $prev_page_url = esc_url(get_previous_posts_page_link());
+        $prev_page_url_to_blog = substr_replace($prev_page_url, '/#blog"', -1);
+        if($prev_link) {
+            $prev_link = str_replace('<a', '<a class="btn btn-primary float-left" href="'.$prev_page_url_to_blog, $prev_link);
+            return $prev_link;
+        }
     }
 }
 
@@ -92,9 +103,11 @@ function get_prev_pagination() {
  */
 function get_next_pagination() {
     $next_link = get_next_posts_link('>');
+    $next_page_url = esc_url(get_next_posts_page_link());
+    $next_page_url_to_blog = substr_replace($next_page_url, '/#blog"', -1);
 
     if($next_link) {
-        $next_link = str_replace('<a', '<a class="btn btn-primary float-right" href="#blog"', $next_link);
+        $next_link = str_replace('<a', '<a class="btn btn-primary float-right" href="'.$next_page_url_to_blog, $next_link);
         return $next_link;
     }
 }
