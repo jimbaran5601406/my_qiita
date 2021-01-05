@@ -19,6 +19,39 @@ add_action('init', function ()
 });
 
 /**
+ * the_excerptの抜粋単語数を50に制限
+ */
+function custom_excerpt_length($length) {
+     return 50;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+/**
+ * the_excerptの上限単語数を超過した部分を'...'に置換
+ */
+function custom_excerpt_more($more) {
+	return '...';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
+/**
+ * タイトル文字数を任意の文字列で切り取り'...'に置換して出力
+ *
+ * @param [String] $title
+ * @param [Int] $max_title_num
+ * @return void
+ */
+function trim_title_or_default($title, $max_title_num = 20) {
+    $title_num = mb_strlen($title);
+
+    if($title_num > $max_title_num) {
+        echo(mb_substr($title, 0, $max_title_num).'...');
+    } else {
+        echo($title);
+    }
+}
+
+/**
  * アイキャッチ画像のパスを取得
  * ※なければデフォルト画像のパスを返す
  *

@@ -35,6 +35,9 @@
             <!-- Career-->
             <?php get_template_part('career'); ?>
 
+            <!-- Blog-->
+            <?php get_template_part('page'); ?>
+
             <!-- Skills-->
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
