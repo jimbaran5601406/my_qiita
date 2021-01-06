@@ -27,6 +27,16 @@ add_action('init', function ()
         'supports' => ['title', 'custom-fields'],
         'show_in_rest' => true, // 新エディター有効化
     ]);
+
+    // スキルカスタム投稿タイプ追加
+    register_post_type('skills', [
+        'label' => 'スキル',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-editor-code',
+        'supports' => ['title', 'custom-fields'],
+        'show_in_rest' => true, // 新エディター有効化
+    ]);
 });
 
 /**
