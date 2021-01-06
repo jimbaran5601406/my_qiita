@@ -9,7 +9,6 @@ add_action('init', function ()
     // キャリアのカスタム投稿タイプ追加
     register_post_type('career', [
         'label' => 'キャリア',
-        'description' => 'Add a career to Career section',
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-welcome-learn-more',
@@ -18,9 +17,8 @@ add_action('init', function ()
     ]);
 
     // 資格カスタム投稿タイプ追加
-    register_post_type('certification', [
+    register_post_type('certifications', [
         'label' => '資格',
-        'description' => 'Add a certification to Certification section',
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-awards',

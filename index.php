@@ -50,8 +50,8 @@
                 </div>
             </section>
             <hr class="m-0" />
-            <!-- Certification  -->
-            <?php get_template_part('certification'); ?>
+            <!-- Certifications  -->
+            <?php get_template_part('certifications'); ?>
         </div>
 
         <?php get_footer(); ?>
