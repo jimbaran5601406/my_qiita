@@ -498,6 +498,7 @@ mark,
 
 .list-inline-item {
 	display: inline-block;
+	position: relative;
 }
 .list-inline-item:not(:last-child) {
 	margin-right: 0.5rem;
@@ -10536,5 +10537,42 @@ section.resume-section .resume-section-content {
 		padding-right: 3rem;
 		padding-top: 5rem;
 		padding-bottom: 5rem;
+	}
+}
+
+/* ==============================
+Skillsセクションカスタマイズ
+============================== */
+.dev-icons span {
+	position: relative;
+}
+.dev-icons span p {
+	display: none;
+	width: 260px;
+	position: absolute;
+	top: 64px;
+	left: 0px;
+	padding: 12px;
+	border-radius: 5px;
+	background: #6693dd;
+	color: #fff;
+	font-size: 1rem;
+}
+.dev-icons span p::after {
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 0;
+	top: -19px;
+	margin-left: 10px;
+	border: solid transparent;
+	border-bottom-color: #6693dd;
+	border-width: 10px;
+	pointer-events: none;
+	content: " ";
+}
+@media (min-width: 1200px) {
+	.dev-icons span li:hover + p {
+		display: block;
 	}
 }
