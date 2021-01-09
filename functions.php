@@ -54,6 +54,19 @@ function custom_excerpt_more($more) {
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 /**
+ * コメント欄カスタマイズ
+ */
+function custom_comment_form($args) {
+    $args['title_reply'] = 'コメントをどうぞ';
+    $args['id_submit'] = 'comment_submit';
+    $args['label_submit'] = '送信';
+    // $args['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+    $args['comment_field'] = '<div class="form-group"><textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea></div>';
+    return $args;
+}
+add_filter('comment_form_defaults', 'custom_comment_form');
+
+/**
  * タイトル文字数を任意の文字列で切り取り'...'に置換して出力
  *
  * @param [String] $title
@@ -84,7 +97,8 @@ function get_eyecatch_with_default()
         $id = get_post_thumbnail_id();
         $img = wp_get_attachment_image_src($id, 'large');
     } else {
-        $img = array(get_template_directory_uri() . '/img/post-bg.jpg');
+        $i = rand(1, 3);
+        $img = get_template_directory_uri() . '/assets/img/default-bg'.$i.'.jpg';
     }
 
     return $img;
