@@ -42,8 +42,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 	// コメント欄の送信ボタン取得
 	const COMMENT_SUBMIT_BTN = document.querySelector("#comment_submit");
-	// bootstrapのクラス名付与
-	COMMENT_SUBMIT_BTN.setAttribute("class", "btn btn-outline-primary btn-block");
+	if (COMMENT_SUBMIT_BTN) {
+		// bootstrapのクラス名付与
+		COMMENT_SUBMIT_BTN.setAttribute(
+			"class",
+			"btn btn-outline-primary btn-block"
+		);
+	}
 });
 
 document.addEventListener("DOMContentLoaded", function () {

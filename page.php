@@ -9,7 +9,7 @@
                         <div class="post-preview">
                         <a href="<?php the_permalink(); ?>">
                             <h3 class="post-title">
-                            <?php trim_title_or_default(get_the_title()); ?>
+                            <?php trim_title_or_default(get_the_title(), 40); ?>
                             </h3>
                             <h4 class="post-subtitle">
                             <?php the_excerpt(); ?>

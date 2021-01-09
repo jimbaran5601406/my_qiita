@@ -176,3 +176,16 @@ function the_menu_items_assigned_headings($content) {
         return;
     }
 }
+
+/**
+ * グルーバルナビゲーション項目表示
+ */
+function the_global_nav() {
+    $menu_name = 'global_nav';
+    $locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object($locations[$menu_name]);
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+    foreach($menu_items as $item) {
+        echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='$item->url'>$item->title</a></li>";
+    }
+}
