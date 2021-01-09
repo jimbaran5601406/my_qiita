@@ -12,7 +12,7 @@ $certifications_posts = get_posts($args);
         <ul class="fa-ul mb-0">
             <?php if($certifications_posts): ?>
                 <?php foreach($certifications_posts as $post): ?>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5" data-aos='zoom-in-downp'>
                         <div class="flex-grow-1">
                             <h3 class="mb-0"><i class="fas fa-trophy text-warning"></i> <?= the_title(); ?></h3>
                         </div>

@@ -61,3 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		heading.setAttribute("id", `hd_${i}`);
 	});
 });
+
+// aosライブラリ初期化
+AOS.init();

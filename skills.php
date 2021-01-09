@@ -14,9 +14,9 @@ $skills_posts = get_posts($args);
         <div class="subheading mb-3">Programming Languages & Tools</div>
             <?php if($skills_posts): ?>
                 <ul class="list-inline dev-icons">
-                <?php foreach($skills_posts as $post): ?>
+                <?php foreach($skills_posts as $key => $post): ?>
                     <span>
-                        <li class="list-inline-item"><i class="fab <?= post_custom('font-awesome-icon-name'); ?>"></i></li>
+                        <li class="list-inline-item" data-aos='zoom-in-downp' data-aos-delay="<?= $key ?>00"><i class="fab <?= post_custom('font-awesome-icon-name'); ?>"></i></li>
                         <p><?php the_title(); ?>の経験年数：<?= post_custom('term') ?> 年</p>
                     </span>
                 <?php endforeach; ?>

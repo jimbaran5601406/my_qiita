@@ -13,7 +13,7 @@ $career_posts = get_posts($args);
 
         <?php if($career_posts): ?>
             <?php foreach($career_posts as $post): ?>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5" data-aos='zoom-in-downp'>
                     <div class="flex-grow-1">
                         <h3 class="mb-0"><?= the_title(); ?></h3>
                         <div class="subheading mb-3"><?= post_custom('position'); ?></div>

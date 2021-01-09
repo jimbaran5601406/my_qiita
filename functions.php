@@ -170,7 +170,7 @@ function the_menu_items_assigned_headings($content) {
         foreach($headings[0] as $key => $heading) {
             // 各見出しのテキスト取得
             $heading = strip_tags($heading);
-            echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='#hd_$key'>$heading</a></li>";
+            echo "<li class='nav-item' data-aos='zoom-in-downp' data-aos-duration='2000'><a class='nav-link js-scroll-trigger' href='#hd_$key'>$heading</a></li>";
         }
     } else {
         return;
@@ -186,6 +186,6 @@ function the_global_nav() {
     $menu = wp_get_nav_menu_object($locations[$menu_name]);
     $menu_items = wp_get_nav_menu_items($menu->term_id);
     foreach($menu_items as $item) {
-        echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='$item->url'>$item->title</a></li>";
+        echo "<li class='nav-item' data-aos='zoom-in-downp' data-aos-duration='2000'><a class='nav-link js-scroll-trigger' href='$item->url'>$item->title</a></li>";
     }
 }
