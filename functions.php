@@ -10,6 +10,15 @@ add_action('init', function ()
         'global_nav' => 'グローバルナビゲーション'
     ]);
 
+    // アバウトのカスタム投稿タイプ追加
+    register_post_type('about', [
+        'label' => 'アバウト',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-admin-users',
+        'supports' => ['custom-fields'],
+        'show_in_rest' => true, // 新エディター有効化
+    ]);
 
     // キャリアのカスタム投稿タイプ追加
     register_post_type('career', [

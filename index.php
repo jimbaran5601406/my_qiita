@@ -12,25 +12,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Kei
-                        <span class="text-primary">Funatsuya</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        Kanagawa, Japan
-                        <a href="mailto:name@email.com">kei.funatsuya@email.com</a>
-                    </div>
-                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://github.com/jimbaran5601406" target="_blank"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="https://twitter.com/jimbaran5601406" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="https://www.instagram.com/jimbaran5601406_" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
+            <?php get_template_part('about'); ?>
 
             <!-- Career-->
             <?php get_template_part('career'); ?>
