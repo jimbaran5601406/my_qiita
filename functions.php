@@ -5,6 +5,11 @@ add_action('init', function ()
     add_theme_support('post-thumbnails');
     // キャリア投稿ページにWP Subtitleフォーム表示
     add_post_type_support( 'career', 'wps_subtitle' );
+    // メニューをサポート
+    register_nav_menus([
+        'global_nav' => 'グローバルナビゲーション'
+    ]);
+
 
     // キャリアのカスタム投稿タイプ追加
     register_post_type('career', [
@@ -140,5 +145,25 @@ function get_next_pagination() {
     if($next_link) {
         $next_link = str_replace('<a', '<a class="btn btn-primary float-right" href="'.$next_page_url_to_blog, $next_link);
         return $next_link;
+    }
+}
+
+/**
+ * 投稿記事の見出しをセットしたメニュー項目表示
+ *
+ * @param [String] $content
+ * @return void
+ */
+function the_menu_items_assigned_headings($content) {
+    preg_match_all('/<h[1-6]>.+<\/h[1-6]>/u', $content, $headings);
+
+    if(!empty($headings[0])){
+        foreach($headings[0] as $key => $heading) {
+            // 各見出しのテキスト取得
+            $heading = strip_tags($heading);
+            echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='#hd_$key'>$heading</a></li>";
+        }
+    } else {
+        return;
     }
 }

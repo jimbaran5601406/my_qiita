@@ -46,3 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	COMMENT_SUBMIT_BTN.setAttribute("class", "btn btn-outline-primary btn-block");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+	// 投稿記事内のh1～h6までの見出し取得
+	const HEADINGS = document.querySelectorAll(
+		".post h2, .post h3, .post h4, .post h5, .post h6"
+	);
+	// 各見出しにhd_indexというID付与
+	HEADINGS.forEach(function (heading, i) {
+		heading.setAttribute("id", `hd_${i}`);
+	});
+});
