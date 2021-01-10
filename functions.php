@@ -30,22 +30,32 @@ add_action('init', function ()
         'show_in_rest' => true, // 新エディター有効化
     ]);
 
-    // 資格カスタム投稿タイプ追加
-    register_post_type('certifications', [
-        'label' => '資格',
-        'public' => true,
-        'menu_position' => 20,
-        'menu_icon' => 'dashicons-awards',
-        'supports' => ['title', 'custom-fields'],
-        'show_in_rest' => true, // 新エディター有効化
-    ]);
-
     // スキルカスタム投稿タイプ追加
     register_post_type('skills', [
         'label' => 'スキル',
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-editor-code',
+        'supports' => ['title', 'custom-fields'],
+        'show_in_rest' => true, // 新エディター有効化
+    ]);
+
+    // ポートフォリオカスタム投稿タイプ追加
+    register_post_type('portfolios', [
+        'label' => 'ポートフォリオ',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-portfolio',
+        'supports' => ['title', 'custom-fields'],
+        'show_in_rest' => true, // 新エディター有効化
+    ]);
+
+     // 資格カスタム投稿タイプ追加
+    register_post_type('certifications', [
+        'label' => '資格',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-awards',
         'supports' => ['title', 'custom-fields'],
         'show_in_rest' => true, // 新エディター有効化
     ]);
@@ -188,4 +198,16 @@ function the_global_nav() {
     foreach($menu_items as $item) {
         echo "<li class='nav-item' data-aos='zoom-in-downp' data-aos-duration='2000'><a class='nav-link js-scroll-trigger' href='$item->url'>$item->title</a></li>";
     }
+}
+
+/**
+ * 閲覧端末スマホチェック
+ *
+ * @return boolean
+ */
+function is_mobile()
+{
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+    return preg_match('/iphone|ipod|ipad|android/ui', $user_agent);
 }
