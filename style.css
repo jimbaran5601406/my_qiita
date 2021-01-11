@@ -10539,7 +10539,14 @@ section.resume-section .resume-section-content {
 		padding-bottom: 5rem;
 	}
 }
-
+/* ==============================
+グローバルナビゲーションカスマイズ
+============================== */
+#site_title {
+	color: #fff;
+	font-size: 1.8rem;
+	margin-bottom: 0;
+}
 /* ==============================
 Skillsセクションカスタマイズ
 ============================== */
@@ -10551,7 +10558,7 @@ Skillsセクションカスタマイズ
 	width: 260px;
 	position: absolute;
 	top: 64px;
-	left: 0px;
+	left: 0;
 	padding: 12px;
 	border-radius: 5px;
 	background: #6693dd;
@@ -10710,4 +10717,12 @@ blockquote cite {
 	text-align: right;
 	color: #888888;
 	font-size: 0.9em;
+}
+/* ==============================
+資格セクションカスタマイズ
+============================== */
+@media (max-width: 576px) {
+	#certifications .certification-title {
+		font-size: 1.5rem;
+	}
 }

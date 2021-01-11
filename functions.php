@@ -16,7 +16,7 @@ add_action('init', function ()
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-admin-users',
-        'supports' => ['custom-fields'],
+        'supports' => ['title', 'custom-fields'],
         'show_in_rest' => true, // 新エディター有効化
     ]);
 

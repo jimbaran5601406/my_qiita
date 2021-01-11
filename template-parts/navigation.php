@@ -4,7 +4,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="<?= esc_url(home_url('/')); ?>">
-        <span class="d-block d-lg-none"><?php bloginfo('name'); ?></span>
+        <h1 id="site_title" class="d-block d-lg-none"><?php bloginfo('name'); ?></h1>
         <?php if(is_single()): ?>
             <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<?= get_template_directory_uri(); ?>/screenshot.png" alt="kf's picture" /></span>
         <?php else: ?>

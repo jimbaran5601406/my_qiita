@@ -10,7 +10,6 @@ $career_posts = get_posts($args);
 <section class="resume-section" id="career">
     <div class="resume-section-content">
         <h2 class="mb-5">Career</h2>
-
         <?php if($career_posts): ?>
             <?php foreach($career_posts as $post): ?>
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5" data-aos='zoom-in-downp'>

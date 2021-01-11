@@ -8,7 +8,6 @@ $portfolios_posts = get_posts($args);
 <section class="resume-section" id="portfolios">
     <div class="resume-section-content">
         <h2 class="mb-5">Portfolios</h2>
-
         <?php if($portfolios_posts): ?>
         <!-- Slider main container -->
             <div class="swiper-container">
