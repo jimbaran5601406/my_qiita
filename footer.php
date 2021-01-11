@@ -6,6 +6,6 @@
 <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="<?= get_template_directory_uri(); ?>/js/scripts.js"></script>
+<script src="<?= get_template_directory_uri(); ?>/assets/js/scripts.js"></script>
 
 <?php wp_footer(); ?>

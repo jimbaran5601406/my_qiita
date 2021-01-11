@@ -6,29 +6,34 @@
     </head>
 
     <body id="page-top">
+        <div id="loading">
+            <div class="loader"></div>
+        </div>
 
-        <?php get_template_part('template-parts/navigation'); ?>
+        <div id="content">
+            <?php get_template_part('template-parts/navigation'); ?>
 
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <?php get_template_part('about'); ?>
+            <!-- Page Content-->
+            <div class="container-fluid p-0">
+                <!-- About-->
+                <?php get_template_part('about'); ?>
 
-            <!-- Career-->
-            <?php get_template_part('career'); ?>
+                <!-- Career-->
+                <?php get_template_part('career'); ?>
 
-            <!-- Blog-->
-            <?php get_template_part('page'); ?>
+                <!-- Blog-->
+                <?php get_template_part('page'); ?>
 
-            <!-- Skills-->
-            <?php get_template_part('skills'); ?>
+                <!-- Skills-->
+                <?php get_template_part('skills'); ?>
 
-            <!-- Portfolios-->
-            <?php get_template_part('portfolios'); ?>
+                <!-- Portfolios-->
+                <?php get_template_part('portfolios'); ?>
 
-            <hr class="m-0" />
-            <!-- Certifications  -->
-            <?php get_template_part('certifications'); ?>
+                <hr class="m-0" />
+                <!-- Certifications  -->
+                <?php get_template_part('certifications'); ?>
+            </div>
         </div>
 
         <?php get_footer(); ?>

@@ -81,10 +81,11 @@ add_filter('excerpt_more', 'custom_excerpt_more');
  * コメント欄カスタマイズ
  */
 function custom_comment_form($args) {
+    $args['email'] = '';
+    $args['url'] = '';
     $args['title_reply'] = 'コメントをどうぞ';
     $args['id_submit'] = 'comment_submit';
     $args['label_submit'] = '送信';
-    // $args['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
     $args['comment_field'] = '<div class="form-group"><textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea></div>';
     return $args;
 }

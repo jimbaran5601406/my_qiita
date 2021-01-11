@@ -56,6 +56,14 @@
 		$(".swiper-content").toggleClass("show");
 	});
 
+	// ローディングアニメーション非表示
+	$(window).on("load", function () {
+		setTimeout(function () {
+			$("#loading").addClass("loaded");
+			$("#content").addClass("loaded");
+		}, 1200);
+	});
+
 	// Smooth scrolling using jQuery easing
 	$('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
 		if (
