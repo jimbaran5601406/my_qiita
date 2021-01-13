@@ -20,7 +20,6 @@
       ?>
 
       <div class="container single-container">
-
         <div class="row">
           <div class="col-lg-8 col-md-12 mx-auto">
             <div class="post-heading">
@@ -30,12 +29,27 @@
                 <?php the_author(); ?> - <?php the_date(); ?>
               </div>
             </div>
-          </div>
-          <div class="col-lg-8 col-md-10 mx-auto">
             <div <?php post_class(); ?>>
               <?php the_content(); ?>
             </div>
-            <?php comments_template(); ?>
+            <div class="recommend-post">
+              <h4>オススメ記事</h4>
+              <div class="row">
+                <?php $recommend_posts = get_recommend_posts(); ?>
+                <?php foreach($recommend_posts as $post): setup_postdata($post); ?>
+                <div class="col-12 col-sm-6">
+                  <a href="<?php the_permalink(); ?>">
+                    <div class="card recommend-post-card">
+                      <?php the_thumbnail($post->ID); ?>
+                      <div class="card-body">
+                        <p class="card-text"><?php trim_title_or_default(get_the_title(), 50); ?></p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -10784,6 +10784,10 @@ Portfoliosセクションカスタマイズ
 	}
 }
 
+.recommend-post-card {
+	margin-bottom: 12px;
+}
+
 blockquote {
 	position: relative;
 	padding: 5px 10px 5px 32px;

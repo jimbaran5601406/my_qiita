@@ -130,6 +130,20 @@ function get_eyecatch_with_default()
 }
 
 /**
+ * サムネイル画像のパスを取得
+ *
+ * @param [Int] $post_id 投稿ID
+ * @return void
+ */
+function the_thumbnail($post_id)
+{
+    $attch_id = get_post_thumbnail_id($post_id);
+    $img = wp_get_attachment_image_src($attch_id, 'medium');
+
+    echo '<img src="'.esc_url($img[0]).'" class="card-img-top">';
+}
+
+/**
  * 新しい記事へのページネーション生成
  *
  * @return $prev_link
@@ -211,4 +225,17 @@ function is_mobile()
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
     return preg_match('/iphone|ipod|ipad|android/ui', $user_agent);
+}
+
+/**
+ * オススメ記事取得
+ *
+ * @return [Array] $recommend_posts
+ */
+function get_recommend_posts() {
+    $args = ['tag' => 'recommend'];
+    $recommend_posts = get_posts($args);
+    if($recommend_posts) {
+        return $recommend_posts;
+    }
 }
