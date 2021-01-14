@@ -150,19 +150,12 @@ function the_thumbnail($post_id)
  */
 function get_prev_pagination() {
     $prev_link = get_previous_posts_link('<');
+    $prev_page_url = esc_url(get_previous_posts_page_link());
+    $prev_page_url_to_blog = substr_replace($prev_page_url, '/#blog"', -1);
 
     if($prev_link) {
-        $prev_link = str_replace('<a', '<a class="btn btn-primary float-left" href="', $prev_link);
+        $prev_link = str_replace('<a', '<a class="btn btn-primary float-left" href="'.$prev_page_url_to_blog, $prev_link);
         return $prev_link;
-    }
-
-    if(is_page()) {
-        $prev_page_url = esc_url(get_previous_posts_page_link());
-        $prev_page_url_to_blog = substr_replace($prev_page_url, '/#blog"', -1);
-        if($prev_link) {
-            $prev_link = str_replace('<a', '<a class="btn btn-primary float-left" href="'.$prev_page_url_to_blog, $prev_link);
-            return $prev_link;
-        }
     }
 }
 
@@ -179,6 +172,34 @@ function get_next_pagination() {
     if($next_link) {
         $next_link = str_replace('<a', '<a class="btn btn-primary float-right" href="'.$next_page_url_to_blog, $next_link);
         return $next_link;
+    }
+}
+
+/**
+ * 投稿ページで前の記事へのリンク表示
+ */
+function the_prev_post_link() {
+    $prev_post = get_previous_post();
+    $prev_post_permalink = get_permalink( $prev_post->ID );
+    $prev_post_title = $prev_post->post_title;
+    if ($prev_post ) {
+        echo '<div class="col-6 text-right"><a class="btn btn-outline-primary" href="'.$prev_post_permalink.'">前の記事へ >></a></div>';
+    } else {
+        echo '<div class="col-6 text-right"><p>最後の記事です</p></div>';
+    }
+}
+
+/**
+ * 投稿ページで次の記事へのリンク表示
+ */
+function the_next_post_link() {
+    $next_post = get_next_post();
+    $next_post_permalink = get_permalink( $next_post->ID );
+    $next_post_title = $next_post->post_title;
+    if ($next_post ) {
+        echo '<div class="col-6 text-left"><a class="btn btn-outline-primary left-blo" href="'.$next_post_permalink.'"><< 次の記事へ</a></div>';
+    } else {
+        echo '<div class="col-6 text-left"><p>最新記事です</p></div>';
     }
 }
 

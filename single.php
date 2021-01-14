@@ -32,14 +32,18 @@
             <div <?php post_class(); ?>>
               <?php the_content(); ?>
             </div>
-            <div class="recommend-post">
+            <div class="row post-pagination">
+              <?php the_next_post_link(); ?>
+              <?php the_prev_post_link(); ?>
+            </div>
+            <div class="post-recommend">
               <h4>オススメ記事</h4>
               <div class="row">
                 <?php $recommend_posts = get_recommend_posts(); ?>
                 <?php foreach($recommend_posts as $post): setup_postdata($post); ?>
                 <div class="col-12 col-sm-6">
                   <a href="<?php the_permalink(); ?>">
-                    <div class="card recommend-post-card">
+                    <div class="card post-recommend-card">
                       <?php the_thumbnail($post->ID); ?>
                       <div class="card-body">
                         <p class="card-text"><?php trim_title_or_default(get_the_title(), 50); ?></p>
