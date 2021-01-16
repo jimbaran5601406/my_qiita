@@ -10739,6 +10739,22 @@ Portfoliosセクションカスタマイズ
 	}
 }
 /* ==============================
+全般カスタマイズ
+============================== */
+/* webkit-scrollbar-thumbだけ指定してもデザイン適用されない */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #6693dd;
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(100, 100, 100, 0.5);
+}
+/* ==============================
 投稿ページカスタマイズ
 ============================== */
 .wp-block-image img {
