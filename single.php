@@ -25,9 +25,6 @@
             <div class="post-heading">
               <h1><?php the_title(); ?></h1>
               <img src="<?= esc_url($img[0]); ?>" alt="アイキャッチ画像">
-              <div class="meta">
-                <?php the_author(); ?> - <?php the_date(); ?>
-              </div>
             </div>
             <div <?php post_class(); ?>>
               <?php the_content(); ?>

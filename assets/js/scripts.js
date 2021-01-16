@@ -6,23 +6,52 @@
 (function ($) {
 	"use strict"; // Start of use strict
 
-	// コメント欄の送信ボタン取得
-	const COMMENT_SUBMIT_BTN = document.querySelector("#comment_submit");
-	if (COMMENT_SUBMIT_BTN) {
-		// bootstrapのクラス名付与
-		COMMENT_SUBMIT_BTN.setAttribute(
-			"class",
-			"btn btn-outline-primary btn-block"
-		);
-	}
+	$(function () {
+		// コメント欄の送信ボタン取得
+		const COMMENT_SUBMIT_BTN = document.querySelector("#comment_submit");
+		if (COMMENT_SUBMIT_BTN) {
+			// bootstrapのクラス名付与
+			COMMENT_SUBMIT_BTN.setAttribute(
+				"class",
+				"btn btn-outline-primary btn-block"
+			);
+		}
+	});
 
-	// 投稿記事内のh1～h6までの見出し取得
-	const HEADINGS = document.querySelectorAll(
-		".post h2, .post h3, .post h4, .post h5, .post h6"
-	);
-	// 各見出しにhd_indexというID付与
-	HEADINGS.forEach(function (heading, i) {
-		heading.setAttribute("id", `hd_${i}`);
+	$(function () {
+		// 投稿記事内のh1～h6までの見出し取得
+		const HEADINGS = document.querySelectorAll(
+			".post h2, .post h3, .post h4, .post h5, .post h6"
+		);
+		// 各見出しにhd_indexというID付与
+		HEADINGS.forEach(function (heading, i) {
+			heading.setAttribute("id", `hd_${i}`);
+		});
+	});
+
+	$(function () {
+		window.addEventListener("scroll", displayClapBtn);
+
+		function displayClapBtn() {
+			const WINDOW_WIDTH = window.innerWidth;
+			if (WINDOW_WIDTH >= 992) {
+				const WINDOW_HEIGHT = window.innerHeight / 3;
+				const VISIBLE_TOP_BORDER =
+					document.querySelector(".post").offsetTop - WINDOW_HEIGHT;
+				const VISIBLE_BOTTOM_BORDER =
+					document.querySelector(".post-pagination").offsetTop - WINDOW_HEIGHT;
+				const CLAP_BTN = document.querySelector(".post .wpulike");
+
+				if (
+					window.scrollY >= VISIBLE_TOP_BORDER &&
+					window.scrollY <= VISIBLE_BOTTOM_BORDER
+				) {
+					CLAP_BTN.classList.add("show");
+				} else {
+					CLAP_BTN.classList.remove("show");
+				}
+			}
+		}
 	});
 
 	// aosライブラリ初期化
