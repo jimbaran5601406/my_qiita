@@ -13,7 +13,7 @@
 
   <?php if(have_posts()): ?>
 
-    <?php while(have_posts()): the_post();?>
+    <?php while(have_posts()): the_post(); $category = get_the_category(); ?>
 
       <?php
       $img = get_eyecatch_with_default();
@@ -44,6 +44,24 @@
                 <div class="col-12 col-sm-6">
                   <a href="<?php the_permalink(); ?>">
                     <div class="card post-recommend-card">
+                      <?php the_thumbnail($post->ID); ?>
+                      <div class="card-body">
+                        <p class="card-text"><?php trim_title_or_default(get_the_title(), 50); ?></p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
+            <div class="post-related">
+              <h4>関連記事</h4>
+              <div class="row">
+                <?php $related_posts = get_related_posts($category[0]->term_id); ?>
+                <?php foreach($related_posts as $post): setup_postdata($post); ?>
+                <div class="col-12 col-sm-6">
+                  <a href="<?php the_permalink(); ?>">
+                    <div class="card post-related-card">
                       <?php the_thumbnail($post->ID); ?>
                       <div class="card-body">
                         <p class="card-text"><?php trim_title_or_default(get_the_title(), 50); ?></p>

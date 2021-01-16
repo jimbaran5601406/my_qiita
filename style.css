@@ -10798,14 +10798,16 @@ Portfoliosセクションカスタマイズ
 	border-bottom: 1px solid #6693dd;
 }
 
-.post-recommend h4 {
+.post-recommend h4,
+.post-related h4 {
 	line-height: 3rem;
 	border-bottom: solid 3px #cce4ff;
 	position: relative;
 	font-size: 1.5rem;
 	margin-bottom: 12px;
 }
-.post-recommend h4:after {
+.post-recommend h4:after,
+.post-related h4:after {
 	position: absolute;
 	content: " ";
 	display: block;
@@ -10813,10 +10815,12 @@ Portfoliosセクションカスタマイズ
 	bottom: -3px;
 	width: 20%;
 }
-.post-recommend-card {
+.post-recommend-card,
+.post-related-card {
 	margin-bottom: 12px;
 }
-.post-recommend-card:hover {
+.post-recommend-card:hover,
+.post-related-card:hover {
 	transform: scale(1.02);
 	transition: all 0.7s;
 }

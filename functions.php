@@ -263,3 +263,20 @@ function get_recommend_posts() {
         return $recommend_posts;
     }
 }
+
+/**
+ * 関連記事取得
+ *
+ * @param [Int] $id
+ * @return [Array] $recommend_posts
+ */
+function get_related_posts($id) {
+    $args = [
+        'category' => $id,
+        'posts_per_page' => 4,
+    ];
+    $related_posts = get_posts($args);
+    if($related_posts) {
+        return $related_posts;
+    }
+}
