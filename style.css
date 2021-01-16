@@ -46,9 +46,7 @@ Description: My Qiita WordPress Theme
 	--breakpoint-md: 768px;
 	--breakpoint-lg: 992px;
 	--breakpoint-xl: 1200px;
-	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-family-sans-serif: "Noto Sans JP", sans-serif;
 	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
 }
@@ -60,7 +58,7 @@ Description: My Qiita WordPress Theme
 }
 
 html {
-	font-family: sans-serif;
+	font-family: "Noto Serif JP", serif;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -81,9 +79,7 @@ section {
 
 body {
 	margin: 0;
-	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol", "Noto Color Emoji";
+	font-family: "Noto Serif JP", serif;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
@@ -400,9 +396,7 @@ h6,
 .h5,
 .h6 {
 	margin-bottom: 0.5rem;
-	font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
-		"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: "Noto Serif JP", serif;
 	font-weight: 700;
 	line-height: 1.2;
 	color: #343a40;
@@ -416,6 +410,12 @@ h1,
 h2,
 .h2 {
 	font-size: 3.5rem;
+}
+@media (max-width: 576px) {
+	h2,
+	.h2 {
+		font-size: 2.5rem;
+	}
 }
 
 h3,
@@ -5937,9 +5937,7 @@ a.close.disabled {
 	z-index: 1070;
 	display: block;
 	margin: 0;
-	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol", "Noto Color Emoji";
+	font-family: "Noto Serif JP", serif;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.5;
@@ -6053,9 +6051,7 @@ a.close.disabled {
 	z-index: 1060;
 	display: block;
 	max-width: 276px;
-	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol", "Noto Color Emoji";
+	font-family: "Noto Serif JP", serif;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.5;
@@ -10434,9 +10430,7 @@ p.lead {
 }
 
 .subheading {
-	font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
-		"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: "Noto Serif JP", serif;
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 1.5rem;
@@ -10651,7 +10645,6 @@ section.resume-section .resume-section-content {
 			0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
 	}
 }
-
 /* ==============================
 グローバルナビゲーションカスマイズ
 ============================== */
@@ -10748,6 +10741,10 @@ Portfoliosセクションカスタマイズ
 /* ==============================
 投稿ページカスタマイズ
 ============================== */
+.wp-block-image img {
+	height: auto;
+}
+
 .single-container {
 	padding-top: 40px;
 }
@@ -10756,17 +10753,26 @@ Portfoliosセクションカスタマイズ
 }
 .single-container h2 {
 	font-size: 1.8rem;
+	margin-bottom: 2rem;
 }
 .single-container h3 {
 	font-size: 1.5rem;
+	margin-bottom: 2rem;
 }
 .single-container h4,
 .single-container h5,
 .single-container h6 {
 	font-size: 1.2rem;
+	margin-bottom: 2rem;
 }
 .post {
 	margin-bottom: 80px;
+}
+.post p {
+	margin-bottom: 1.5rem;
+}
+.post-title {
+	text-transform: initial;
 }
 .post-heading {
 	margin-bottom: 24px;
@@ -10784,10 +10790,36 @@ Portfoliosセクションカスタマイズ
 	}
 }
 
-.recommend-post-card {
-	margin-bottom: 12px;
+.post-pagination {
+	margin: 24px 0;
+}
+.post-pagination p {
+	display: inline-block;
+	border-bottom: 1px solid #6693dd;
 }
 
+.post-recommend h4 {
+	line-height: 3rem;
+	border-bottom: solid 3px #cce4ff;
+	position: relative;
+	font-size: 1.5rem;
+	margin-bottom: 12px;
+}
+.post-recommend h4:after {
+	position: absolute;
+	content: " ";
+	display: block;
+	border-bottom: solid 3px #5472cd;
+	bottom: -3px;
+	width: 20%;
+}
+.post-recommend-card {
+	margin-bottom: 12px;
+}
+.post-recommend-card:hover {
+	transform: scale(1.02);
+	transition: all 0.7s;
+}
 blockquote {
 	position: relative;
 	padding: 5px 10px 5px 32px;

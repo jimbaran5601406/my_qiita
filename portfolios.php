@@ -1,5 +1,6 @@
 <?php
 $args = array(
+    'posts_per_page' => 10, // 表示する投稿数
     'post_type' => 'portfolios', // 取得する投稿タイプのスラッグ
   );
 

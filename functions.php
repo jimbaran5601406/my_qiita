@@ -254,7 +254,10 @@ function is_mobile()
  * @return [Array] $recommend_posts
  */
 function get_recommend_posts() {
-    $args = ['tag' => 'recommend'];
+    $args = [
+        'tag' => 'recommend',
+        'posts_per_page' => 4,
+    ];
     $recommend_posts = get_posts($args);
     if($recommend_posts) {
         return $recommend_posts;
