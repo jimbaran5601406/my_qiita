@@ -28,6 +28,13 @@
             </div>
             <div <?php post_class(); ?>>
               <?php the_content(); ?>
+              <div class="post-comment-btn">
+                <img src="<?= get_template_directory_uri(); ?>/assets/img/comment.png" alt="コメントアイコン">
+                <span class="count-box"><?= get_comments_number(); ?></span>
+              </div>
+              <div class="post-comment-area">
+                <?php comments_template(); ?>
+              </div>
             </div>
             <div class="row post-pagination">
               <?php the_next_post_link(); ?>

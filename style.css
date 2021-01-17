@@ -406,7 +406,6 @@ h1,
 .h1 {
 	font-size: 6rem;
 }
-
 h2,
 .h2 {
 	font-size: 3.5rem;
@@ -414,13 +413,19 @@ h2,
 @media (max-width: 576px) {
 	h2,
 	.h2 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 }
 
 h3,
 .h3 {
 	font-size: 2rem;
+}
+@media (max-width: 576px) {
+	h3,
+	.h3 {
+		font-size: 1.8rem;
+	}
 }
 
 h4,
@@ -10411,12 +10416,12 @@ body {
 		padding-left: 17rem;
 	}
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+#page-top h1,
+#page-top h2,
+#page-top h3,
+#page-top h4,
+#page-top h5,
+#page-top h6 {
 	text-transform: uppercase;
 }
 
@@ -10434,6 +10439,11 @@ p.lead {
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 1.5rem;
+}
+@media (max-width: 576px) {
+	.subheading {
+		font-size: 1rem;
+	}
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -10650,7 +10660,7 @@ section.resume-section .resume-section-content {
 ============================== */
 #site_title {
 	color: #fff;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	margin-bottom: 0;
 }
 /* ==============================
@@ -10887,6 +10897,47 @@ blockquote cite {
 	font-size: 0.9em;
 }
 
+.post .post-comment-btn {
+	position: relative;
+	display: inline-block;
+}
+.post .post-comment-btn img {
+	position: relative;
+	top: 6px;
+	width: 30px;
+	height: 32px;
+}
+.post .post-comment-btn span {
+	position: relative;
+	top: 6px;
+	font-size: 14px;
+	line-height: 28px;
+	display: inline-block;
+	color: #616161;
+	text-align: center;
+	font-weight: 600;
+	padding: 0 5px;
+}
+@media (min-width: 992px) {
+	.post .post-comment-btn {
+		opacity: 0;
+		visibility: hidden;
+		position: fixed;
+		left: 295px;
+		top: 36%;
+		z-index: 2000;
+		transition: all 0.8s;
+	}
+	.post .post-comment-btn.show {
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.8s;
+	}
+}
+
+.post .wpulike {
+	display: inline-block;
+}
 .post .wpulike-heart .wp_ulike_general_class {
 	box-shadow: none;
 	padding: 0;
@@ -10903,7 +10954,6 @@ blockquote cite {
 }
 @media (min-width: 992px) {
 	.post .wpulike {
-		display: inline-block;
 		opacity: 0;
 		visibility: hidden;
 		position: fixed;
@@ -10918,6 +10968,41 @@ blockquote cite {
 		transition: all 0.8s;
 	}
 }
+
+.post-comment-area {
+	background-color: #fff;
+	position: fixed;
+	z-index: 1400;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 320px;
+	border-left: 1px solid lightgray;
+	box-shadow: -2px 0 5px lightgray;
+	padding: 12px;
+	transform: translateX(100%);
+	transition: all 1s;
+}
+.post-comment-area.initial {
+	transform: translateX(0);
+}
+.post-comment-area.show {
+	transform: translateX(0);
+	transition: all 1s;
+}
+.post-comment-area .comments-list {
+	list-style: none;
+	padding: 0;
+}
+.post-comment-area .comments-list .says {
+	display: none;
+}
+.post-comment-hide-btn {
+	display: inline-block;
+	float: right;
+	font-size: 1.5rem;
+}
+
 /* ==============================
 資格セクションカスタマイズ
 ============================== */

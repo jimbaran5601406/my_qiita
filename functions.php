@@ -81,15 +81,30 @@ add_filter('excerpt_more', 'custom_excerpt_more');
  * コメント欄カスタマイズ
  */
 function custom_comment_form($args) {
-    $args['email'] = '';
-    $args['url'] = '';
-    $args['title_reply'] = 'コメントをどうぞ';
+    $args['fields']['author'] = '';
+    $args['fields']['url'] = '';
+    $args['fields']['email'] = '';
+    $args['comment_notes_before'] = '';
+    $args['title_reply'] = '';
     $args['id_submit'] = 'comment_submit';
     $args['label_submit'] = '送信';
-    $args['comment_field'] = '<div class="form-group"><textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea></div>';
+    $args['comment_field'] = '<div class="form-group"><textarea class="form-control" name="comment" rows="5" placeholder="間違ってる箇所、アドバイス等ございましたコメントください！"></textarea></div>';
+
     return $args;
 }
 add_filter('comment_form_defaults', 'custom_comment_form');
+
+/**
+ * コメント入力欄の表示順を変更する
+ */
+function move_comment_field_to_bottom($fields) {
+  $comment_field = $fields['comment'];
+  unset( $fields['comment'] );
+  $fields['comment'] = $comment_field;
+
+  return $fields;
+}
+add_filter( 'comment_form_fields', 'move_comment_field_to_bottom' );
 
 /**
  * タイトル文字数を任意の文字列で切り取り'...'に置換して出力

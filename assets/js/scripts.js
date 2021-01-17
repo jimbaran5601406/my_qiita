@@ -41,17 +41,36 @@
 				const VISIBLE_BOTTOM_BORDER =
 					document.querySelector(".post-pagination").offsetTop - WINDOW_HEIGHT;
 				const CLAP_BTN = document.querySelector(".post .wpulike");
+				const COMMENT_BTN = document.querySelector(".post .post-comment-btn");
 
 				if (
 					window.scrollY >= VISIBLE_TOP_BORDER &&
 					window.scrollY <= VISIBLE_BOTTOM_BORDER
 				) {
 					CLAP_BTN.classList.add("show");
+					COMMENT_BTN.classList.add("show");
 				} else {
 					CLAP_BTN.classList.remove("show");
+					COMMENT_BTN.classList.remove("show");
 				}
 			}
 		}
+	});
+
+	$(function () {
+		const COMMENT_BTN = document.querySelector(".post-comment-btn img");
+		const COMMENT_AREA = document.querySelector(".post-comment-area");
+		const COMMENT_HIDE_BTN = document.querySelector(".post-comment-hide-btn");
+
+		if (location.hash) {
+			COMMENT_AREA.classList.add("show");
+		}
+		COMMENT_BTN.addEventListener("click", function () {
+			COMMENT_AREA.classList.toggle("show");
+		});
+		COMMENT_HIDE_BTN.addEventListener("click", function () {
+			COMMENT_AREA.classList.toggle("show");
+		});
 	});
 
 	// aosライブラリ初期化
