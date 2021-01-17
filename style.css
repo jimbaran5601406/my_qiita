@@ -1,23 +1,12 @@
 @charset "UTF-8";
-
-/*!
-* Start Bootstrap - Resume v6.0.2 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2020 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-*/
-
-/*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-
 /*
 Theme Name: My Qiita
 Version: 1.0.0
 Author: kf
 Description: My Qiita WordPress Theme
+License: GNU General Public License
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+?>
 */
 :root {
 	--blue: #007bff;
@@ -10998,6 +10987,7 @@ blockquote cite {
 	display: none;
 }
 .post-comment-hide-btn {
+	cursor: pointer;
 	display: inline-block;
 	float: right;
 	font-size: 1.5rem;

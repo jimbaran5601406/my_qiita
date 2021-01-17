@@ -1,3 +1,11 @@
+<?php
+/**
+ * My Qiita WordPress Theme
+ * @author: Kei Funatsuya
+ * @link: https://myqiita.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+?>
 <?php if ( comments_open() ) : ?>
     <div class="post-comment-hide-btn">&times;</div>
     <?php if(have_comments()): ?>

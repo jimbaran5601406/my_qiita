@@ -1,4 +1,11 @@
 <?php
+/**
+ * My Qiita WordPress Theme
+ * @author: Kei Funatsuya
+ * @link: https://myqiita.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 $args = array(
     'posts_per_page' => 10, // 表示する投稿数
     'post_type' => 'portfolios', // 取得する投稿タイプのスラッグ

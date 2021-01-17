@@ -1,4 +1,11 @@
 <?php
+/**
+ * My Qiita WordPress Theme
+ * @author: Kei Funatsuya
+ * @link: https://myqiita.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 add_action('init', function ()
 {
     // アイキャッチ画像をメニューに表示
@@ -64,7 +71,8 @@ add_action('init', function ()
 /**
  * the_excerptの抜粋単語数を50に制限
  */
-function custom_excerpt_length($length) {
+function custom_excerpt_length($length)
+{
      return 50;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
@@ -72,7 +80,8 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 /**
  * the_excerptの上限単語数を超過した部分を'...'に置換
  */
-function custom_excerpt_more($more) {
+function custom_excerpt_more($more)
+{
 	return '...';
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
@@ -80,7 +89,8 @@ add_filter('excerpt_more', 'custom_excerpt_more');
 /**
  * コメント欄カスタマイズ
  */
-function custom_comment_form($args) {
+function custom_comment_form($args)
+{
     $args['fields']['author'] = '';
     $args['fields']['url'] = '';
     $args['fields']['email'] = '';
@@ -97,7 +107,8 @@ add_filter('comment_form_defaults', 'custom_comment_form');
 /**
  * コメント入力欄の表示順を変更する
  */
-function move_comment_field_to_bottom($fields) {
+function move_comment_field_to_bottom($fields)
+{
   $comment_field = $fields['comment'];
   unset( $fields['comment'] );
   $fields['comment'] = $comment_field;
@@ -113,7 +124,8 @@ add_filter( 'comment_form_fields', 'move_comment_field_to_bottom' );
  * @param [Int] $max_title_num
  * @return void
  */
-function trim_title_or_default($title, $max_title_num = 20) {
+function trim_title_or_default($title, $max_title_num = 20)
+{
     $title_num = mb_strlen($title);
 
     if($title_num > $max_title_num) {
@@ -163,7 +175,8 @@ function the_thumbnail($post_id)
  *
  * @return $prev_link
  */
-function get_prev_pagination() {
+function get_prev_pagination()
+{
     $prev_link = get_previous_posts_link('<');
     $prev_page_url = esc_url(get_previous_posts_page_link());
     $prev_page_url_to_blog = substr_replace($prev_page_url, '/#blog"', -1);
@@ -179,7 +192,8 @@ function get_prev_pagination() {
  *
  * @return $next_link
  */
-function get_next_pagination() {
+function get_next_pagination()
+{
     $next_link = get_next_posts_link('>');
     $next_page_url = esc_url(get_next_posts_page_link());
     $next_page_url_to_blog = substr_replace($next_page_url, '/#blog"', -1);
@@ -193,7 +207,8 @@ function get_next_pagination() {
 /**
  * 投稿ページで前の記事へのリンク表示
  */
-function the_prev_post_link() {
+function the_prev_post_link()
+{
     $prev_post = get_previous_post();
     $prev_post_permalink = get_permalink( $prev_post->ID );
     $prev_post_title = $prev_post->post_title;
@@ -207,7 +222,8 @@ function the_prev_post_link() {
 /**
  * 投稿ページで次の記事へのリンク表示
  */
-function the_next_post_link() {
+function the_next_post_link()
+{
     $next_post = get_next_post();
     $next_post_permalink = get_permalink( $next_post->ID );
     $next_post_title = $next_post->post_title;
@@ -224,7 +240,8 @@ function the_next_post_link() {
  * @param [String] $content
  * @return void
  */
-function the_menu_items_assigned_headings($content) {
+function the_menu_items_assigned_headings($content)
+{
     preg_match_all('/<h[1-6]>.+<\/h[1-6]>/u', $content, $headings);
 
     if(!empty($headings[0])){
@@ -241,7 +258,8 @@ function the_menu_items_assigned_headings($content) {
 /**
  * グルーバルナビゲーション項目表示
  */
-function the_global_nav() {
+function the_global_nav()
+{
     $menu_name = 'global_nav';
     $locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object($locations[$menu_name]);
@@ -268,7 +286,8 @@ function is_mobile()
  *
  * @return [Array] $recommend_posts
  */
-function get_recommend_posts() {
+function get_recommend_posts()
+{
     $args = [
         'tag' => 'recommend',
         'posts_per_page' => 4,
@@ -285,7 +304,8 @@ function get_recommend_posts() {
  * @param [Int] $id
  * @return [Array] $recommend_posts
  */
-function get_related_posts($id) {
+function get_related_posts($id)
+{
     $args = [
         'category' => $id,
         'posts_per_page' => 4,

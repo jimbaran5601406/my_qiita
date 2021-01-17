@@ -1,3 +1,11 @@
+<?php
+/**
+ * My Qiita WordPress Theme
+ * @author: Kei Funatsuya
+ * @link: https://myqiita.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+?>
 <!-- The intention of this action is to allow people to add things – like a <script> tag – directly inside the body of a page. -->
 <?php wp_body_open(); ?>
 

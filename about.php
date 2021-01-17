@@ -1,4 +1,12 @@
 <?php
+/**
+ * My Qiita WordPress Theme
+ * @author: Kei Funatsuya
+ * @link: https://myqiita.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+?>
+<?php
 $args = array(
     'post_type' => 'about', // 取得する投稿タイプのスラッグ
   );
