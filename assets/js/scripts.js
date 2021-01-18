@@ -7,6 +7,19 @@
 (function ($) {
 	"use strict"; // Start of use strict
 
+	$(function() {
+		const NAVBAR = document.querySelector(".navbar-nav");
+		const NAVBAR_BRAND_HEIGHT = document.querySelector(".navbar-brand").clientHeight;
+		const NAVBAR_HEIGHT = NAVBAR.clientHeight;
+		const WINDOW_HEIGHT = window.innerHeight;
+		const IS_OVERFLOW = WINDOW_HEIGHT < NAVBAR_BRAND_HEIGHT + NAVBAR_HEIGHT;
+
+		$(".navbar-brand").addClass("show");
+		$(".navbar-nav").addClass("show");
+		if(IS_OVERFLOW) {
+			NAVBAR.classList.add("overflow");
+		}
+	})
 	$(function () {
 		// コメント欄の送信ボタン取得
 		const COMMENT_SUBMIT_BTN = document.querySelector("#comment_submit");

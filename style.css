@@ -10781,6 +10781,31 @@ Portfoliosセクションカスタマイズ
 	font-size: 1.2rem;
 	margin-bottom: 2rem;
 }
+
+.single #sideNav .navbar-brand,
+.single #sideNav .navbar-collapse .navbar-nav {
+	opacity: 0;
+}
+.single #sideNav .navbar-brand.show,
+.single #sideNav .navbar-collapse .navbar-nav.show {
+	opacity: 1;
+	transition: all 1s;
+}
+.single #sideNav .navbar-collapse .navbar-nav.overflow {
+	height: 100vh;
+	overflow: scroll;
+}
+.single #sideNav .navbar-collapse .navbar-nav::-webkit-scrollbar {
+	width: 4px;
+}
+.single #sideNav .navbar-collapse .navbar-nav::-webkit-scrollbar-thumb {
+	background: #fff;
+	height: 30px;
+}
+.single #sideNav .navbar-collapse .navbar-nav::-webkit-scrollbar-track {
+	background: rgba(180, 180, 180, 0.5);
+}
+
 .post {
 	margin-bottom: 80px;
 }

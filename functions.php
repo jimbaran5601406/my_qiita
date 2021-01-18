@@ -248,7 +248,7 @@ function the_menu_items_assigned_headings($content)
         foreach($headings[0] as $key => $heading) {
             // 各見出しのテキスト取得
             $heading = strip_tags($heading);
-            echo "<li class='nav-item' data-aos='zoom-in-downp' data-aos-duration='2000'><a class='nav-link js-scroll-trigger' href='#hd_$key'>$heading</a></li>";
+            echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='#hd_$key'>$heading</a></li>";
         }
     } else {
         return;
