@@ -25,8 +25,8 @@
 <link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="//cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
-<link rel="stylesheet" href="//unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="<?= get_template_directory_uri(); ?>/style.css" rel="stylesheet" />
