@@ -24,11 +24,16 @@
 			const NAVBAR_BRAND_HEIGHT = document.querySelector(".navbar-brand").clientHeight;
 			const NAVBAR_HEIGHT = NAVBAR.clientHeight;
 			const WINDOW_HEIGHT = window.innerHeight;
-			const IS_OVERFLOW = WINDOW_HEIGHT < NAVBAR_BRAND_HEIGHT + NAVBAR_HEIGHT;
+			const IS_OVERFLOW = WINDOW_HEIGHT <= NAVBAR_BRAND_HEIGHT + NAVBAR_HEIGHT;
+
+			const CHILD_ELEMENT_COUNT = NAVBAR.childElementCount;
 
 			$(".navbar-brand").addClass("show");
 			$(".navbar-nav").addClass("show");
+
 			if(IS_OVERFLOW) {
+				NAVBAR.classList.add("overflow");
+			} else if (CHILD_ELEMENT_COUNT > 18) { // スマホのドロワーメニューで高さを計測できないため見出し数で判定
 				NAVBAR.classList.add("overflow");
 			}
 		}

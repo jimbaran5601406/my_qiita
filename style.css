@@ -10781,7 +10781,6 @@ Portfoliosセクションカスタマイズ
 	font-size: 1.2rem;
 	margin-bottom: 2rem;
 }
-
 .single #sideNav .navbar-brand,
 .single #sideNav .navbar-collapse .navbar-nav {
 	opacity: 0;
@@ -10792,9 +10791,10 @@ Portfoliosセクションカスタマイズ
 	transition: all 1s;
 }
 .single #sideNav .navbar-collapse .navbar-nav.overflow {
-	height: 100vh;
+	height: 86vh;
 	overflow: scroll;
 }
+
 .single #sideNav .navbar-collapse .navbar-nav::-webkit-scrollbar {
 	width: 4px;
 }
@@ -10804,6 +10804,15 @@ Portfoliosセクションカスタマイズ
 }
 .single #sideNav .navbar-collapse .navbar-nav::-webkit-scrollbar-track {
 	background: rgba(180, 180, 180, 0.5);
+}
+@media (max-width: 576px) {
+	.single-container {
+		padding-top: 24px;
+	}
+	.single #sideNav .navbar-collapse .navbar-nav.overflow {
+		height: 100vh;
+		overflow: scroll;
+	}
 }
 
 .post {
@@ -10822,12 +10831,6 @@ Portfoliosセクションカスタマイズ
 	width: 100%;
 	height: auto;
 }
-@media (max-width: 576px) {
-	.single-container {
-		padding-top: 24px;
-	}
-}
-
 .post-pagination {
 	margin: 24px 0;
 }
@@ -10835,7 +10838,6 @@ Portfoliosセクションカスタマイズ
 	display: inline-block;
 	border-bottom: 1px solid #6693dd;
 }
-
 .post-recommend h4,
 .post-related h4 {
 	line-height: 3rem;
