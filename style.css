@@ -10831,6 +10831,10 @@ Portfoliosセクションカスタマイズ
 	width: 100%;
 	height: auto;
 }
+.post-ad a img {
+	width: 100%;
+	height: auto;
+}
 .post-pagination {
 	margin: 24px 0;
 }

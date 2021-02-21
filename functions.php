@@ -290,7 +290,7 @@ function get_recommend_posts()
 {
     $args = [
         'tag' => 'recommend',
-        'posts_per_page' => 4,
+        'posts_per_page' => 3,
     ];
     $recommend_posts = get_posts($args);
     if($recommend_posts) {
@@ -308,7 +308,7 @@ function get_related_posts($id)
 {
     $args = [
         'category' => $id,
-        'posts_per_page' => 4,
+        'posts_per_page' => 3,
     ];
     $related_posts = get_posts($args);
     if($related_posts) {
